@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CryptoNian </title>
+    <link rel="icon" href="public/images/favicon.ico">
+    <link rel="stylesheet" href="public/styles.css">
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/themes/dark_provence.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-ui.min.js"></script>  
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fredericka+the+Great&family=Montserrat+Alternates:wght@100&family=Nixie+One&family=Quintessential&family=Rajdhani:wght@300&family=Rock+Salt&family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.11.0/css/anychart-ui.min.css"/>
+</head>
+<div class="topnav" id="myTopnav">
+    <img id="logo" src="public/images/favi.png" />
+    <nav id="myLinks">
+        <a href="#HowTo"> Home</a>
+        <a href="#Coin"> Coins </a>
+        <a href="#Model"> Models </a>
+        <a href="#Contact"> Contact </a>
+    </nav>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <img src="public/images/categories.png"/>
+    </a>
+</div>
+
+<body>
+    <h1> CryptoNian </h1>
+    <div id="HowTo">
+        <h3 class="content"> How to? </h3>
+        <p class="lower-content"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna quam, laoreet ac sapien eget, tempor condimentum sem. Vivamus eu arcu nibh. Praesent eget ullamcorper augue. Cras eu ultrices lorem. Maecenas lacinia ipsum non ante rhoncus dictum. Vestibulum aliquam, diam auctor faucibus tincidunt, diam tellus 
+            tincidunt sem, sit amet vestibulum massa nisi molestie dolor. Ut hendrerit rhoncus ante, vel finibus diam laoreet pretium.
+        </p>
+    </div>
+    <div id="Coin">
+        <h3 class="content"> Select Coins </h3>
+        <div class="lower-content"> 
+            <p>  
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna quam, laoreet ac sapien eget, tempor condimentum sem. Vivamus eu arcu nibh. Praesent eget ullamcorper augue. Cras eu ultrices lorem. Maecenas lacinia ipsum non ante rhoncus dictum. Vestibulum aliquam, diam auctor faucibus tincidunt, diam tellus 
+                tincidunt sem, sit amet vestibulum massa nisi molestie dolor. Ut hendrerit rhoncus ante, vel finibus diam laoreet pretium.
+            </p> 
+            <a href="#btc"><img class="img-coin" src="public/images/crypto/btc.png" onclick="coinClicked('btc')" /></a>
+            <a href="#eth"><img class="img-coin" src="public/images/crypto/eth.png" onclick="coinClicked('eth')" /></a>
+            <a href="#cardano"><img id="ada" class="img-coin" src="public/images/crypto/ada.png" onclick="coinClicked('ada')" /></a>
+            <span> soon . . . . </span>
+        </div>
+    </div>
+    <div id="Model">
+        <h3 class="content"> Select Model </h3>
+        <p class="lower-content"> 
+            <strong><mark> 1. Common-Sense BaseLine: </mark></strong><br><br> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna quam, laoreet ac sapien eget, tempor condimentum sem. Vivamus eu arcu nibh. Praesent eget ullamcorper augue. Cras eu ultrices lorem. Maecenas lacinia ipsum non ante rhoncus dictum. Vestibulum aliquam, diam auctor faucibus tincidunt, diam tellus 
+            tincidunt sem, sit amet vestibulum massa nisi molestie dolor. Ut hendrerit rhoncus ante, vel finibus diam laoreet pretium.
+        </p>
+    </div>
+    <div id="Forecast">
+        <h3 class="content"> ForeCast </h3>
+        <div id="chartDiv" style="width:90%; height:800px; margin:0 auto;"></div>
+    </div>
+    <div id="MoreInfo">
+        <h3 class="content"> More Info | Sentiment Analysis </h3>
+        <p class="lower-content"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna quam, laoreet ac sapien eget, tempor condimentum sem. Vivamus eu arcu nibh. Praesent eget ullamcorper augue. Cras eu ultrices lorem. Maecenas lacinia ipsum non ante rhoncus dictum. Vestibulum aliquam, diam auctor faucibus tincidunt, diam tellus 
+            tincidunt sem, sit amet vestibulum massa nisi molestie dolor. Ut hendrerit rhoncus ante, vel finibus diam laoreet pretium.
+        </p>
+    </div>
+</body>
+<footer>
+    <p> Copyright 2022 @ CryptoNian | ALiK </p>
+</footer>
+<script src="public/index.js"></script>
+</html>
