@@ -1,19 +1,4 @@
 
-//! added a proxy between the web-app requesting data and server providing it
-
-//* CORS-anywhere
-//* High latency
-
-// const forecast_path_2 = "https://sleepy-inlet-64052.herokuapp.com/forecast"
-// const forecast_proxy_path_2 = 'https://cors-anywhere.herokuapp.com/' + forecast_path_2
-// const test = "https://gist.githubusercontent.com/shacheeswadia/e2fd68f19e5331f87d38473a45a11dbe/raw/396b3e14f2d7e05aa188e0a420a7b622ed4111bd/amzohlcweekly.csv"
-
-//* Custom proxy
-// custom_proxy_path = "http://localhost:8800/forecast"
-// const github_path = "https://raw.githubusercontent.com/AlikMon88/CryptoNian/main/Extra/w9j2-ggv5.csv"
-
-//! Last shot is creating a Proxy server
-
 //Basic Toogling
 
 //: proxied URL
@@ -30,28 +15,58 @@ function myFunction() {
     }
 } 
 
+
+// append iframe to main_child
+
+divLoaded = (event) => {
+    alert("New_Coin_Selcted");
+    console.log("Div Loaded");
+}
+
 function coinClicked(coin_name) {
-    console.log(coin_name);
     clickCount += 1;
+    console.log("coin_name: " + coin_name);
     console.log("Click Count: ", clickCount);    
     let url = root_url + "?coin=" + coin_name;
     console.log('New_URL: ',url);
-    forcast_coin(url, coin_name);
-    document.getElementById("Forecast").classList.remove("waiting");
-    document.getElementById("Forecast").classList.add("forecasting");
+    // make a promise for forecast coin
+    let promise = new Promise(function(resolve, reject) {
+        resolve(forcast_coin(url, coin_name));
+    });
+    promise.then(() => {
+        document.getElementById("Forecast").classList.remove("waiting");
+        document.getElementById("Forecast").classList.add("forecasting");
+    })
+    .then(() => {
+        let main_child = document.getElementById("chartDiv").firstChild;
+        // check if main_child is null or not
+        if (main_child == null) {
+                document.getElementById("Forecast").classList.add("loading");
+            setTimeout(function(){
+                console.log("Loading_Done!");
+                document.getElementById("Forecast").classList.remove("loading");
+            }, 1.5 * 1000);
+        } else {
+            let iframe = document.createElement("iframe");
+            main_child.appendChild(iframe);
+            iframe.onload = divLoaded;
+        }
+    })        
+    // forcast_coin(url, coin_name);
 
 }
 
+// console.log(document.getElementById("Forecast").readyState)
+
 
 //: hide previous charDiv when clckCount > 1
-
-
  
 
 function forcast_coin (url, coin_name) {
     console.log("Forecast is activated");
     anychart.onDocumentReady(function() {
         anychart.data.loadCsvFile(url, function(data) {
+            console.log('Loading Done ...')
             anychart.theme('darkProvence');
             //* we obtain text CSV -> Text
             console.log("Data: ", data.length)
@@ -127,9 +142,6 @@ function forcast_coin (url, coin_name) {
         childs[i].style.display = "none";
     }
 
-    // setTimeout(function(){
-    //     document.getElementById("chartDiv").style.display = "none";
-    // }, 2*1000);
 }
 
     
