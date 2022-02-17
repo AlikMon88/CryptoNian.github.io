@@ -137,6 +137,6 @@ function forcast_coin (url, coin_name) {
 
 
    setTimeout(() => {
-       const box = document.getElementById("container");
+       const loader = document.getElementById("container");
        container.style.display = "none";
    }, 10000);
