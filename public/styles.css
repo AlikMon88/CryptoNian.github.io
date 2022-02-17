@@ -258,10 +258,11 @@ footer {
 }
 
 .loading {
-    position: relative;
-    margin: 15px;
-    border-radius: 15px;
-    background-image:  url('images/crypto/loading.gif');
-    background-size: cover;
-    background-position: 50% 50%;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 45%;
+    margin-bottom: 35px;
+    /* border-radius: 15px; */
+    width: 120px;
+    height: 120px;
 }

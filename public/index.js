@@ -41,22 +41,29 @@ function coinClicked(coin_name) {
         let main_child = document.getElementById("chartDiv").firstChild;
         // check if main_child is null or not
         if (main_child == null) {
-                document.getElementById("Forecast").classList.add("loading");
+                let h3 = document.getElementById("Forecast").querySelector("h3");
+                h3.innerHTML = "Forecasting  👀 👀 ";
+                //create img element
+                let img = document.createElement("img");
+                img.classList.add("loading");
+                img.src = "public/images/crypto/loading.gif";
+                h3.after(img)
             setTimeout(function(){
                 console.log("Loading_Done!");
-                document.getElementById("Forecast").classList.remove("loading");
-            }, 1.5 * 1000);
+                img.style.display = 'none';
+            }, 15 * 1000);
+            setTimeout(function(){
+                h3.innerHTML = "ForeCast";
+            }, 2 * 1000);
         } else {
             let iframe = document.createElement("iframe");
             main_child.appendChild(iframe);
             iframe.onload = divLoaded;
         }
     })        
-    // forcast_coin(url, coin_name);
 
 }
 
-// console.log(document.getElementById("Forecast").readyState)
 
 
 //: hide previous charDiv when clckCount > 1
