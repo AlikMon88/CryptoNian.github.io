@@ -212,3 +212,75 @@ footer {
 #chartDiv{
     max-height: 800px;
 }
+
+/* Loader styling goes here */
+.container{
+    height: 45rem;
+    text-align: center;
+    background-color: #242F3F;
+}
+.loader, .loader2{
+    display: inline-block;
+    width: 15rem;
+    height: 15rem;
+    position: relative;
+    border: 4px solid white;
+    top: 40%;
+    animation: loader 2s infinite ease;
+}
+.loader1{
+    background-image: url("images/crypto/eth.png");
+
+}
+.loader2{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-image: url("images/crypto/btc.png");
+
+}
+.loader3{
+    background-image: url("images/crypto/ada.png");
+
+}
+.loader-inner{
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #f6931a;
+    animation: loader-inner 10s infinite ease-in;
+}
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader-inner{
+    0%{
+        height:0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
