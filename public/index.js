@@ -19,7 +19,8 @@ function myFunction() {
 // append iframe to main_child
 
 divLoaded = (event) => {
-    alert("New_Coin_Selcted");
+    //: for better loading
+    console.log("New_Coin_Selected")
     console.log("Div Loaded");
 }
 
@@ -42,7 +43,6 @@ function coinClicked(coin_name) {
         // check if main_child is null or not
         if (main_child == null) {
                 let h3 = document.getElementById("Forecast").querySelector("h3");
-                h3.innerHTML = "Forecasting  👀 👀 ";
                 //create img element
                 let img = document.createElement("img");
                 img.classList.add("loading");
@@ -51,10 +51,7 @@ function coinClicked(coin_name) {
             setTimeout(function(){
                 console.log("Loading_Done!");
                 img.style.display = 'none';
-            }, 15 * 1000);
-            setTimeout(function(){
-                h3.innerHTML = "ForeCast";
-            }, 2 * 1000);
+            }, 3600 * 1000);
         } else {
             let iframe = document.createElement("iframe");
             main_child.appendChild(iframe);
