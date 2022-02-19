@@ -133,4 +133,10 @@ function forcast_coin (url, coin_name) {
 }
 
     
+// loader  timeOut function
 
+
+   setTimeout(() => {
+       const loader = document.getElementById("container");
+       container.style.display = "none";
+   }, 10000);
