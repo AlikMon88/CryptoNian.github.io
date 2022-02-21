@@ -11,7 +11,7 @@ body {
     /* overflow: hidden;      */
     position: relative;
     background: linear-gradient(to left, rgb(255, 205, 143), #858585bd);
-    padding: 20px;
+    padding: 50px;
     text-align: right;
     z-index: 0;
 }
@@ -23,6 +23,11 @@ h1 {
     text-shadow:1px 1px 10px chartreuse;
 }
 
+iframe {
+    display: none;
+    width: 0;
+    height: 0;
+}
 
 .topnav a {
     font-family: 'Montserrat Alternates', sans-serif;
@@ -68,8 +73,8 @@ footer {
 
 #logo {
     position: absolute;
-    left: 8px;
-    top: 8px;
+    left: 28px;
+    top: 38px;
     width: 2.5rem;
     height: 2.5rem;
     z-index: 1;
@@ -111,10 +116,52 @@ footer {
     padding-left: 10px;
 }
 
+#disclaimer {
+    margin-top: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    font-family: 'comfortaa', sans-serif;
+    font-weight: bolder;
+    color: red;
+    font-size: larger;
+    background-color: lightsalmon;
+    width: 50%;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 0 7px rgba(0,0,0,0.5);
+}
+
+#disclaimer a {
+    text-decoration: none;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#disclaimer a:hover {
+    background-color: bisque;
+}
+
+#disclaimer span {
+    font-size: medium;
+    padding: 5px;
+}
+
+.loading {
+    position: absolute;
+    margin-top: 17%;
+    margin-left: 40%;
+    margin-bottom: 35px;
+    width: 170px;
+    height: 170px;
+}
+
 /* make a responsive navigation bar */
 @media screen and (max-width: 600px) {
     .topnav {
-        padding: 25px;
+        padding: 35px;
     }
 
     .topnav a {
@@ -124,18 +171,29 @@ footer {
         position: absolute;
         display: block;
         right: 7px;
-        top: 3px;
+        top: 10px;
         
 
     }
     .topnav #logo {
         height: 2rem;
         width: 2rem;
-        top: 9px;
+        top: 19px;
+        left: 15px;
     }
     
+    #disclaimer {
+        width: 60%;
+    }
+
     #charDiv {
         height: auto;
+    }
+
+    .loading {
+        margin-left: 28%;
+        margin-top: 20%;
+        
     }
 }
 
@@ -181,7 +239,8 @@ footer {
     text-align: left;
     width: 40%;
     border-radius: 5px 15px 15px 5px;
-    background-color: lightpink;   
+    background: linear-gradient(to right, lightpink, #858585bd), 
+    url("images/upper_container.PNG");   
     box-shadow: 0 0 7px rgba(0,0,0,0.5);
 
 }
@@ -212,3 +271,4 @@ footer {
 #chartDiv{
     max-height: 800px;
 }
+
